@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hey "<%= user.username %>"</h2>
+    <h2>Are you sure want to participate in "<%= tournament.name%> ?"</h2>
+    <form action="/tournaments/<%= user.id%>/register/<%= tournament.id%>" method="POST">   
+        <input type="hidden" name="IdUser" value="<%= user.id%>">
+        <input type="hidden" name="IdTournament" value="<%= tournament.id%>">
+        <input type="submit" value="SURE">
+    </form><br>
+    <a href="/tournaments/<%= user.id%>"><button>CANCEL</button></a><br><br><br>
+    <%- include('./creditbar.ejs')%>
+</body>
+</html>

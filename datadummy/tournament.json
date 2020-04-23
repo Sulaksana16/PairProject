@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Fast Coding Competition",
+        "organizer": "9Hacktiv",
+        "quota": 3,
+        "prize": 50000000,
+        "location": "Pondok Indah",
+        "date": "2020-08-16"
+    },
+    {
+        "name": "Chess Open Tournament",
+        "organizer": "GoKerja",
+        "quota": 20,
+        "prize": 10000000,
+        "location": "MCC Tower",
+        "date": "2020-08-17"
+    },
+    {
+        "name": "Marathon 20k",
+        "organizer": "Storepedia",
+        "quota": 200,
+        "prize": 110000000,
+        "location": "Sudirman",
+        "date": "2020-09-15"
+    }
+]

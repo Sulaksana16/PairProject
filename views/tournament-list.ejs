@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tournament List</h1>
+    <table border>
+        <tr>
+            <th>Tournament</th>
+            <th>Organizer</th>
+            <th>Quota</th>
+            <th>Prize Total</th>
+            <th>Location</th>
+            <th>Date</th>
+            <th>Register</th>
+        </tr>
+        <% for (let i = 0; i < tournaments.length; i++){%>
+            <tr>
+                <td><%= tournaments[i].name %></td>
+                <td><%= tournaments[i].organizer %></td>
+                <td><%= tournaments[i].quota %></td>
+                <td><%= tournaments[i].prize %></td>
+                <td><%= tournaments[i].location %></td>
+                <td><%= tournaments[i].date %></td>
+                <td>
+                    <a href="#"><button>register</button></a>
+                </td>
+            </tr>
+        <%}%>
+        </table>
+</body>
+</html>

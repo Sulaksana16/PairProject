@@ -6,8 +6,7 @@ module.exports = (sequelize, DataTypes) => {
 
   TournamentUser.init({
     IdTournament: DataTypes.INTEGER,
-    IdUser: DataTypes.INTEGER,
-    count: DataTypes.INTEGER
+    IdUser: DataTypes.INTEGER
   }, { sequelize })
 
   TournamentUser.associate = function (models) {

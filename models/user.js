@@ -6,13 +6,30 @@ module.exports = (sequelize, DataTypes) => {
   class User extends Model { }
 
   User.init({
-    username: DataTypes.STRING,
-    password: DataTypes.STRING
+    username:{
+      type: DataTypes.STRING,
+      validate : {
+        notEmpty: true
+      }
+    },  
+    password: {
+      type: DataTypes.STRING,
+      validate : {
+        notEmpty: true
+      }
+    },  
+    email: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true,
+        isEmail: true
+      }
+    } 
   }, { sequelize })
 
   User.associate = function (models) {
     // associations can be defined here
-    User.belongsToMany(models.Tournament, { through: 'TournamentUsers', foreignKey: 'IdTurnament' })
+    User.belongsToMany(models.Tournament, { through: 'TournamentUsers', as:'tournaments', foreignKey: 'IdUser' })
   };
   return User;
 };

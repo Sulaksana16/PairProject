@@ -5,6 +5,6 @@ const tournamentRouter = require('./tournament.js');
 const userRouter = require('./user.js');
 
 router.use('/tournaments', tournamentRouter);
-// router.use('/users', userRouter);
+router.use('/users', userRouter);
 
 module.exports = router;

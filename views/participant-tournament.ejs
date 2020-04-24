@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./navbar.ejs')%>
+    <h1>Participant Tournament List</h1>
+    <h3><%= tournament.name %></h3>
+    <% if (!tournament.users.length) {%>
+        <h4>No Participant Registered</h4>
+    <%} else {%>
+        <table border>
+            <tr>
+                <th>No.</th>
+                <th>Account</th>
+            </tr>
+            <% for (let i = 0; i < tournament.users.length; i++){%>
+                <tr>
+                    <td><%= i+1 %>.</td>
+                    <td><%= tournament.users[i].username %></td>
+                </tr>
+            <%}%>
+        </table>
+    <%}%>
+    <%- include('./creditbar.ejs')%>
+</body>
+</html>

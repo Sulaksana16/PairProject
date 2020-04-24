@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%- include('./navbar.ejs')%>
     <h1>Tournament List</h1>
     <table border>
         <tr>
@@ -22,14 +23,16 @@
                 <td><%= tournaments[i].name %></td>
                 <td><%= tournaments[i].organizer %></td>
                 <td><%= tournaments[i].quota %></td>
-                <td><%= tournaments[i].prize %></td>
+                <td>IDR <%= tournaments[i].prize %></td>
                 <td><%= tournaments[i].location %></td>
                 <td><%= tournaments[i].date %></td>
                 <td>
-                    <a href="#"><button>register</button></a>
+                    <a href="/tournaments/<%= user.id%>/register/<%= tournaments[i].id %>"><button>register</button></a>
+                    <a href="/tournaments/<%= user.id%>/<%= tournaments[i].id %>/participants"><button>see participants</button></a>
                 </td>
             </tr>
         <%}%>
         </table>
+        <%- include('./creditbar.ejs')%>
 </body>
 </html>

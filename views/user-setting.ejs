@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('./navbar.ejs')%>
+    <h3>Account Participation</h3>
+    <% if (!user.tournaments.length) {%>
+        <h4>Not Participate in Any Tournament</h4>
+    <%} else {%>
+        <table border>
+            <tr>
+                <th>No.</th>
+                <th>Tournament</th>
+                <th>Location</th>
+                <th>Date</th>
+            </tr>
+            <% for (let i = 0; i < user.tournaments.length; i++){%>
+                <tr>
+                    <td><%= i+1 %>.</td>
+                    <td><%= user.tournaments[i].name %></td>
+                    <td><%= user.tournaments[i].location %></td>
+                    <td><%= user.tournaments[i].date %></td>
+                </tr>
+            <%}%>
+        </table>
+    <%}%>
+    <br><br>
+    <h3>Account Setting</h3>
+    <form action="/users/<%= user.id%>/setting" method="POST">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" value="<%= user.username %>"><br>
+        <label for="email">E-mail</label><br>
+        <input type="text" id="email" name="email" value="<%= user.email%>"><br>
+        <input type="submit" value="Change" onclick="return confirm('Are you sure you want to change Account setting?');">
+        <input type="reset" value="Cancel">
+    </form><br><br>
+    <a href="/users" onclick="return confirm('Are you sure you want to Log Out?');"><button>Log Out</button></a>
+    <br><br>
+    <a href="" onclick="return confirm('Are you sure you want to delete this Account?');"><button>Delete Account</button></a>
+    <%- include('./creditbar.ejs')%>
+</body>
+</html>

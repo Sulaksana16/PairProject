@@ -3,7 +3,8 @@ module.exports = (sequelize, DataTypes) => {
   const Model = sequelize.Sequelize.Model
 
   class TournamentUser extends Model { }
-
+// IdUser	"1"
+    // IdTournament	"1"
   TournamentUser.init({
     IdTournament: DataTypes.INTEGER,
     IdUser: DataTypes.INTEGER
@@ -15,7 +16,6 @@ module.exports = (sequelize, DataTypes) => {
         const TournamentUser = ModelAll.TournamentUser;
         return TournamentUser.findAll()
           .then(data => {
-            console.log(data);
           for (let i = 0; i < data.length; i++){
             if(this.IdUser == data[i].IdUser && this.IdTournament == data[i].IdTournament){
               throw new Error ('You Are Already Registered')

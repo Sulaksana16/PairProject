@@ -9,7 +9,7 @@
     <%- include('./navbar.ejs')%>
     <h3>Account Participation</h3>
     <% if (!user.tournaments.length) {%>
-        <h4>Not Participate in Any Tournament Yet</h4>
+        <h4>Not Participate in Any Tournament</h4>
     <%} else {%>
         <table border>
             <tr>
@@ -33,11 +33,13 @@
     <form action="/users/<%= user.id%>/setting" method="POST">
         <label for="username">Username</label><br>
         <input type="text" id="username" name="username" value="<%= user.username %>"><br>
-        <label for="password">password</label><br>
-        <input type="password" id="password" name="password" value="<%= user.password%>"><br>
-        <input type="submit" value="Change">
+        <label for="email">E-mail</label><br>
+        <input type="text" id="email" name="email" value="<%= user.email%>"><br>
+        <input type="submit" value="Change" onclick="return confirm('Are you sure you want to change Account setting?');">
         <input type="reset" value="Cancel">
     </form><br><br>
+    <a href="/users" onclick="return confirm('Are you sure you want to Log Out?');"><button>Log Out</button></a>
+    <br><br>
     <a href="" onclick="return confirm('Are you sure you want to delete this Account?');"><button>Delete Account</button></a>
     <%- include('./creditbar.ejs')%>
 </body>

@@ -1,6 +1,7 @@
 [
     {
         "username": "user dummy",
-        "password": "password"
+        "password": "password",
+        "email" : "email_dummy@gmail.com"
     }
 ]
